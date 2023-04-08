@@ -7,7 +7,7 @@ $(document).ready(function () {
     let entities =
       JSON.parse(localStorage.getItem("entities" + entityName)) || [];
 
-    if (entities === []){
+    if (entities.length){
       return;
     }
 
