@@ -7,11 +7,11 @@ $(document).ready(function () {
     let entities =
       JSON.parse(localStorage.getItem("entities" + entityName)) || [];
 
-    let propiedades = Object.keys(entities[0]);
-
-    if (propiedades === null){
+    if (entities === null){
       return;
     }
+
+    let propiedades = Object.keys(entities[0]);    
 
     let tabla = $(`.table${entityName} tbody`).empty();
 
