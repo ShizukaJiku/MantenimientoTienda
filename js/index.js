@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $.get("/header_footer.html", function (data) {
+  $.get("header_footer.html", function (data) {
     $("#header_footer").append(data);
   });
 
@@ -8,6 +8,10 @@ $(document).ready(function () {
       JSON.parse(localStorage.getItem("entities" + entityName)) || [];
 
     let propiedades = Object.keys(entities[0]);
+
+    if (propiedades === null){
+      return;
+    }
 
     let tabla = $(`.table${entityName} tbody`).empty();
 
